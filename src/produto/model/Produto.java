@@ -86,7 +86,6 @@ public abstract class Produto {
 
 	public void setStatus(String status) {
 	    this.status = status;
-	    System.out.println(obterCorParaStatus(status) + "Status atualizado para: " + status + Cores.TEXT_RESET);
 	}
 
 	public String obterCorParaStatus(String status) {
@@ -133,9 +132,9 @@ public abstract class Produto {
 			metodoPagamento = "Debito";
 			break;
 		}
-		System.out.println("\n\n***********************************************************");
+		System.out.println("\n\n***********************************************************************");
 		System.out.println("Dados do produto:");
-		System.out.println("***********************************************************");
+		System.out.println("***************************************************************************");
 		System.out.println("Código do produto: " + this.codigoDoProduto);
 		System.out.println("Nome do produto: " + this.nomeDoProduto);
 		System.out.println("Método de pagamento: " + metodoPagamento);

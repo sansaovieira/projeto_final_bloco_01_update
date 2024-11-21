@@ -3,7 +3,7 @@ package produto.repository;
 import produto.model.Produto;
 
 public interface ProdutoRepository {
-	// CRUD da Loja
+	// CRUD de produtos
 	public void procurarPorNumero(int codigoDoProduto);
 
 	public void listarTodas();
@@ -14,9 +14,10 @@ public interface ProdutoRepository {
 
 	public void deletar(int codigoDoProduto);
 
-	// Métodos da Loja
-	public void adicionarProduto(int numero, float valor);
+	// Métodos dos produtos
 
-	public void reabastecerProduto(int numero, float valor);
+	void adicionarProduto(int codigoDoProduto, int quantidade);
+
+	void reabastecerProduto(int codigoDoProduto, int quantidade);
 
 }

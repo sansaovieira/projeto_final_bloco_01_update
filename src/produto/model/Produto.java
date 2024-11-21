@@ -2,7 +2,7 @@ package produto.model;
 
 import loja.util.Cores;
 
-public class Produto {
+public abstract class Produto {
 	private int codigoDoProduto;
 	private String nomeDoProduto;
 	private String descricaoDoProduto;
@@ -85,7 +85,27 @@ public class Produto {
 	}
 
 	public void setStatus(String status) {
-		this.status = status;
+	    this.status = status;
+	    System.out.println(obterCorParaStatus(status) + "Status atualizado para: " + status + Cores.TEXT_RESET);
+	}
+
+	public String obterCorParaStatus(String status) {
+	    switch (status.toLowerCase()) {
+	        case "processando":
+	            return Cores.TEXT_YELLOW;
+	        case "enviado":
+	            return Cores.TEXT_BLUE;
+	        case "entregue":
+	            return Cores.TEXT_GREEN;
+	        case "cancelado":
+	            return Cores.TEXT_RED;
+	        case "disponível":
+	            return Cores.TEXT_GREEN_BOLD;
+	        case "indisponível":
+	            return Cores.TEXT_RED_BOLD;
+	        default:
+	            return Cores.TEXT_RESET;
+	    }
 	}
 
 	public boolean adicionarProduto(int quantidade) {
@@ -123,7 +143,7 @@ public class Produto {
 		System.out.println("Quantidade: " + this.quantidadeDoProduto);
 		System.out.println("Preço: R$ "+ this.preco);
 		System.out.println("Endereço: " + this.enderecoDeEntrega);
-		System.out.println("Status: " + this.status);
+		System.out.println("Status: " + obterCorParaStatus(this.status) + this.status + Cores.TEXT_RESET);
 	}
 
 }

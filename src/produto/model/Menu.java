@@ -1,20 +1,24 @@
-package loja;
+package produto.model;
 
 import java.util.Scanner;
-import produto.model.Produto;
+
 import loja.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
-		
-		Produto p1 = new Produto(1, "Tênis Nike", "Tênis de corrida", 10, 250.0f, 1, "Rua Exemplo, 123", "disponível");
+
+		Produto p1 = new Tenis(1, "Tênis Nike", "Tênis de corrida", 5, 250.0f, 1, "Rua Manoel Patricío de Menezes 123", "disponível");
+		Produto p2 = new Tenis(2, "Tênis Air Jordan", "Tênis de esporte", 2, 950.0f, 1, "Av. Tiradentes 123", "Processando");
 		
 		p1.adicionarProduto(2);
 		p1.reabastecerProduto(1);
 		p1.visualizar();
 		
-		
+		p2.adicionarProduto(2);
+		p2.reabastecerProduto(1);
+		p2.visualizar();
+
 		Scanner scanner = new Scanner(System.in);
 
 		int opcao;
@@ -23,13 +27,16 @@ public class Menu {
 			System.out.println("************************************************************************");
 			System.out.println("************************************************************************");
 			System.out.println("                                                                        ");
-			System.out.println(Cores.TEXT_WHITE_BOLD + "                   🛍 LOJA DE CALÇADOS SLOW - LINHA NIKE                " + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_WHITE_BOLD
+					+ "                   🛍 LOJA DE CALÇADOS SLOW - LINHA NIKE                " + Cores.TEXT_RESET);
 			System.out.println("                                                                        ");
 			System.out.println("                         ➕ 1 - Criar novo pedido de compra                       ");
 			System.out.println("                         📋 2 - Listar produtos disponíveis                ");
 			System.out.println("                         🔎 3 - Buscar produto por número               ");
 			System.out.println("                         ✏ 4 - Atualizar status de um pedido              ");
-			System.out.println(Cores.TEXT_RED_BOLD + "                         🗑 5 - Cancelar ou excluir pedidos                          " + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_RED_BOLD
+					+ "                         🗑 5 - Cancelar ou excluir pedidos                          "
+					+ Cores.TEXT_RESET);
 			System.out.println("                         ⬅ 6 - Sair                                    ");
 			System.out.println("                                                     ");
 			System.out.println("*************************************************************************");

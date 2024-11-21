@@ -1,11 +1,20 @@
-package projeto_final_bloco_01_update;
+package loja;
 
 import java.util.Scanner;
+import produto.model.Produto;
+import loja.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
-
+		
+		Produto p1 = new Produto(1, "Tênis Nike", "Tênis de corrida", 10, 250.0f, 1, "Rua Exemplo, 123", "disponível");
+		
+		p1.adicionarProduto(2);
+		p1.reabastecerProduto(1);
+		p1.visualizar();
+		
+		
 		Scanner scanner = new Scanner(System.in);
 
 		int opcao;
@@ -14,22 +23,21 @@ public class Menu {
 			System.out.println("************************************************************************");
 			System.out.println("************************************************************************");
 			System.out.println("                                                                        ");
-			System.out.println("                   🛍 LOJA DE CALÇADOS SLOW - LINHA NIKE                ");
+			System.out.println(Cores.TEXT_WHITE_BOLD + "                   🛍 LOJA DE CALÇADOS SLOW - LINHA NIKE                " + Cores.TEXT_RESET);
 			System.out.println("                                                                        ");
-			System.out.println("                         ➕ 1 - Cadastrar produto                       ");
-			System.out.println("                         📋 2 - Listar todos os produtos                ");
+			System.out.println("                         ➕ 1 - Criar novo pedido de compra                       ");
+			System.out.println("                         📋 2 - Listar produtos disponíveis                ");
 			System.out.println("                         🔎 3 - Buscar produto por número               ");
-			System.out.println("                         ✏ 4 - Atualizar dados do produto              ");
-			System.out.println("                         🗑 5 - Apagar produto                          ");
-			System.out.println("                         🛒 6 - comprar                                 ");
-			System.out.println("                         ⬅ 7 - Sair                                    ");
+			System.out.println("                         ✏ 4 - Atualizar status de um pedido              ");
+			System.out.println(Cores.TEXT_RED_BOLD + "                         🗑 5 - Cancelar ou excluir pedidos                          " + Cores.TEXT_RESET);
+			System.out.println("                         ⬅ 6 - Sair                                    ");
 			System.out.println("                                                     ");
 			System.out.println("*************************************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
 
 			opcao = scanner.nextInt();
 
-			if (opcao == 7) {
+			if (opcao == 6) {
 				System.out.println("\nLoja de calçados SLOW, desperta o seu estilo!");
 				sobre();
 				scanner.close();
@@ -38,11 +46,11 @@ public class Menu {
 
 			switch (opcao) {
 			case 1:
-				System.out.println("Cadastrar produto\n\n");
+				System.out.println("Criar novo pedido de compra\n\n");
 				break;
 
 			case 2:
-				System.out.println("Listar todos os produtosn\n\n");
+				System.out.println("Listar produtos disponíveisn\n\n");
 				break;
 
 			case 3:
@@ -50,15 +58,11 @@ public class Menu {
 				break;
 
 			case 4:
-				System.out.println("Atualizar dados do produto\n\n");
+				System.out.println("Atualizar status de um pedido\n\n");
 				break;
 
 			case 5:
-				System.out.println("Apagar produto\n\n");
-				break;
-
-			case 6:
-				System.out.println("Comprar produto");
+				System.out.println("Cancelar ou excluir pedidos\n\n");
 				break;
 
 			default:
